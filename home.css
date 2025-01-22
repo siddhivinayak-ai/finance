@@ -1,0 +1,324 @@
+
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to bottom, #000428, #004e92);
+    color: white;
+}
+
+
+nav.top-nav, .bottom-nav {
+    background-color: #0d1b2a;
+    display: flex;
+    align-items: center;
+    padding: 15px 10px;
+    position: fixed;
+    width:100%;
+    z-index: 100;
+}
+
+nav.top-nav {
+    top: 0;
+
+    justify-content: left;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    
+}
+
+nav.top-nav span{
+    margin-left: 10px;
+}
+
+.root-logo {
+    width: 1.7rem;
+    
+    
+    margin-left: 7rem;
+    object-fit: cover;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+
+
+
+
+
+
+
+
+.bottom-nav {
+    bottom: 0;
+    justify-content: space-around;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.app-name {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.top-nav i, .bottom-nav a i {
+    font-size: 24px;
+    color: white;
+}
+
+.bottom-nav a {
+    text-decoration: none;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 12px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Sidebar Styles */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -300px; /* Hidden off-screen initially */
+    width: 250px;
+    height: 100%;
+    background-color: #0d1b2a; /* Dark background */
+    transition: left 0.3s ease-in-out; /* Smooth slide-in animation */
+    z-index: 200;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+    overflow-y: auto; /* Allows scrolling if content overflows */
+}
+
+/* Sidebar Close Button */
+.sidebar i#close-sidebar {
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+/* Sidebar Menu Items */
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar ul li {
+    margin: 15px 0;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s ease-in-out;
+}
+
+.sidebar ul li a:hover {
+    color: #21bf73; /* Highlight on hover */
+}
+
+.sidebar ul li a i {
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+/* Social Media Icons */
+.sidebar .social-media {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2); /* Separator line */
+    padding-top: 10px;
+}
+
+.sidebar .social-media a {
+    color: white;
+    font-size: 20px;
+    transition: color 0.3s ease-in-out;
+}
+
+.sidebar .social-media a:hover {
+    color: #007bff; /* Change color on hover */
+}
+
+.sidebar .social-media a.facebook { color: #3b5998; }
+.sidebar .social-media a.twitter { color: #1da1f2; }
+.sidebar .social-media a.instagram { color: #e4405f; }
+.sidebar .social-media a.linkedin { color: #0077b5; }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 200px; /* Narrower sidebar on smaller screens */
+    }
+
+    .sidebar ul li a {
+        font-size: 14px; /* Smaller font for links */
+    }
+
+    .sidebar .social-media a {
+        font-size: 18px; /* Adjust icon size */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Cards Container */
+.cards-container {
+    padding: 80px 10px 50px;
+    display: flex;
+    flex-direction: column;
+    gap:1.2rem;
+}
+
+/* Card Styles */
+.card {
+    background: #1c2541;
+    padding: 10px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    color: white;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+}
+
+/* First Container: Company Details */
+.card .company-details {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.card .company-details img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-right: 15px;
+    object-fit: cover;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.card .company-details .info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.card .company-details .info .name {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.card .company-details .info .offer-dates {
+    font-size: 12px;
+    color: #a8dadc;
+}
+
+
+
+
+
+
+
+
+
+/* Tag Styling */
+.tag {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: bold;
+    color: white;
+    background-color: #333; /* Default background color */
+}
+
+/* Conditional Colors Based on data-tag */
+.tag[data-tag="BSE SME"] {
+    background-color: #ff4500; /* Orange for BSE SME */
+}
+
+.tag[data-tag="MainBoard"] {
+    background-color: #4caf50; /* Green for MainBoard */
+}
+
+
+
+/* IPO Data Styling */
+.ipo-data {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    text-align: center;
+    padding-top: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.data-item {
+    font-size: 14px;
+    color: #c5c9c9;
+}
+
+.data-item strong {
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Positive Values: Green Styling */
+.data-item strong.green {
+    color: #21bf73; /* Bright green for positive values */
+}
+
+/* Negative Values: Red Styling */
+.data-item strong.red {
+    color: #e63946; /* Bright red for negative values */
+}
+
+/* Optional: Neutral Styling for Zero */
+.data-item strong.neutral {
+    color: #f4a261; /* Orange for neutral values (e.g., zero) */
+}
+
+
+
+#active{
+    color: rgb(0, 225, 169);
+}
+
+
